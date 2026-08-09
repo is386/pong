@@ -3,9 +3,38 @@
 [ext_resource type="Script" uid="uid://cl10gatofnexb" path="res://src/gameplay/player/player.gd" id="1_k2146"]
 [ext_resource type="Texture2D" uid="uid://bq5ts8nb6niey" path="res://assets/art/characters/template_player.png" id="2_64h4j"]
 
-[node name="Player" type="Node2D" unique_id=1261036120]
-position = Vector2(1, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn2t0"]
+size = Vector2(16, 106)
+
+[node name="Player" type="CharacterBody2D" unique_id=1644524287]
 script = ExtResource("1_k2146")
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="." unique_id=1828022754]
 texture = ExtResource("2_64h4j")
+
+[node name="PlayerSprite2D5" type="Sprite2D" parent="." unique_id=1028337075]
+position = Vector2(0, 30)
+texture = ExtResource("2_64h4j")
+
+[node name="PlayerSprite2D2" type="Sprite2D" parent="." unique_id=1245597166]
+position = Vector2(0, -30)
+texture = ExtResource("2_64h4j")
+
+[node name="PlayerSprite2D3" type="Sprite2D" parent="." unique_id=1914009897]
+position = Vector2(0, 15)
+texture = ExtResource("2_64h4j")
+
+[node name="PlayerSprite2D4" type="Sprite2D" parent="." unique_id=1681387118]
+position = Vector2(0, -15)
+texture = ExtResource("2_64h4j")
+
+[node name="PlayerSprite2D6" type="Sprite2D" parent="." unique_id=148178892]
+position = Vector2(0, -45)
+texture = ExtResource("2_64h4j")
+
+[node name="PlayerSprite2D7" type="Sprite2D" parent="." unique_id=1260890695]
+position = Vector2(0, 45)
+texture = ExtResource("2_64h4j")
+
+[node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1876135745]
+shape = SubResource("RectangleShape2D_sn2t0")

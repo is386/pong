@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctfib7m441jbs" path="res://src/core/main.gd" id="1_avv2o"]
 [ext_resource type="PackedScene" uid="uid://bwmhixliuiiqq" path="res://src/debug/debug_text_overlay.tscn" id="2_ukt3u"]
+[ext_resource type="PackedScene" uid="uid://cbju77b6xd0hh" path="res://src/gameplay/ball/ball.tscn" id="3_nxx65"]
 [ext_resource type="PackedScene" uid="uid://ehbd0ol75ec8" path="res://src/ui/menus/title_screen.tscn" id="3_title"]
 [ext_resource type="Script" uid="uid://enc1ym3u6tkt" path="res://src/core/managers/level_manager.gd" id="4_lvlmgr"]
 [ext_resource type="PackedScene" uid="uid://30n8yprab0ke" path="res://src/ui/menus/pause_menu.tscn" id="5_pause"]
@@ -26,6 +27,9 @@ unique_name_in_owner = true
 
 [node name="EntityRoot" type="Node2D" parent="World" unique_id=2056603287]
 unique_name_in_owner = true
+
+[node name="Ball" parent="World/EntityRoot" unique_id=1262033168 instance=ExtResource("3_nxx65")]
+position = Vector2(-70, -2)
 
 [node name="EffectRoot" type="Node2D" parent="World" unique_id=821278954]
 unique_name_in_owner = true

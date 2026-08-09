@@ -14,7 +14,6 @@ var _last_player_collided: Player = null
 
 
 func _ready() -> void:
-	velocity = Vector2(speed, 0)
 	visible_notifier.screen_exited.connect(_on_screen_exited)
 
 

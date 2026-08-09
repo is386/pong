@@ -7,6 +7,7 @@ var players: Array[Player] = []
 
 # Managers
 @onready var level_manager: LevelManager = %LevelManager
+@onready var game_manager: GameManager = %GameManager
 
 # Game World root nodes
 @onready var entity_root: Node2D = %EntityRoot
@@ -55,6 +56,7 @@ func _on_game_started(level_uid: String) -> void:
 	_hide_menus()
 	_init_players()
 	load_level(level_uid)
+	game_manager.start_game()
 
 
 func _on_game_exit_to_title_requested() -> void:

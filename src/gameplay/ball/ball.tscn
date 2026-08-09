@@ -17,3 +17,6 @@ texture = ExtResource("1_orjqg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244713408]
 shape = SubResource("RectangleShape2D_orjqg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1284192278]
+rect = Rect2(-8, -8, 16, 16)

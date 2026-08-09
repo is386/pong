@@ -10,7 +10,6 @@ const MAX_SPEED_MULTIPLIER = 2
 @onready var visible_notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 var _speed_multiplier: float = 1
-var _last_player_collided: Player = null
 
 
 func _ready() -> void:
@@ -26,7 +25,6 @@ func _physics_process(delta: float) -> void:
 
 	if collision.get_collider() is Player:
 		var player := collision.get_collider() as Player
-		_last_player_collided = player
 		var velocity_bounce := velocity
 
 		velocity = global_position - player.global_position
@@ -38,5 +36,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_screen_exited() -> void:
-	scored.emit(_last_player_collided.is_player_one)
+	scored.emit(global_position.x > 0)
 	queue_free()

@@ -1,6 +1,8 @@
 class_name GameManager
 extends Node
 
+signal score_updated
+
 @export var ball_scene: PackedScene
 @export var entity_root: Node
 @export var start_delay_seconds: float = 3
@@ -26,7 +28,7 @@ func _spawn_ball() -> void:
 	var ball := ball_scene.instantiate() as Ball
 	var s := 1 if randi() % 2 else -1
 	ball.global_position = Vector2(0, -150)
-	ball.velocity = Vector2(s * ball.speed, ball.speed / 2)
+	ball.velocity = Vector2(s * ball.speed, ball.speed / 3)
 	ball.scored.connect(_on_scored)
 	entity_root.add_child(ball)
 
@@ -38,6 +40,7 @@ func _on_scored(is_player_one: bool) -> void:
 		player_two_points += 1
 
 	start_game()
+	score_updated.emit()
 
 
 func _on_delay_timer_timeout() -> void:

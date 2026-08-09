@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cbju77b6xd0hh" path="res://src/gameplay/ball/ball.tscn" id="3_nxx65"]
 [ext_resource type="PackedScene" uid="uid://ehbd0ol75ec8" path="res://src/ui/menus/title_screen.tscn" id="3_title"]
 [ext_resource type="Script" uid="uid://enc1ym3u6tkt" path="res://src/core/managers/level_manager.gd" id="4_lvlmgr"]
+[ext_resource type="PackedScene" uid="uid://xxb77sil4pnu" path="res://src/ui/hud/score_hud.tscn" id="5_nlf45"]
 [ext_resource type="PackedScene" uid="uid://30n8yprab0ke" path="res://src/ui/menus/pause_menu.tscn" id="5_pause"]
 [ext_resource type="PackedScene" uid="uid://da2e87er73qht" path="res://src/ui/menus/settings/settings_menu.tscn" id="6_settings"]
 
@@ -52,6 +53,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="ScoreHUD" parent="HudLayer/HudRoot" unique_id=701967923 node_paths=PackedStringArray("game_manager") instance=ExtResource("5_nlf45")]
+layout_mode = 1
+game_manager = NodePath("../../../Managers/GameManager")
 
 [node name="MenuLayer" type="CanvasLayer" parent="." unique_id=1600000001]
 unique_name_in_owner = true

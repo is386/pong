@@ -27,7 +27,7 @@ func _on_game_exited_to_menu() -> void:
 
 
 func _on_start_button_pressed() -> void:
-	SignalBus.game_started.emit(level_uid, &"")
+	SignalBus.game_started.emit(level_uid)
 
 
 func _on_settings_button_pressed() -> void:

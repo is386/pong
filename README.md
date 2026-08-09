@@ -1,2 +1,3 @@
-# godot-project-template
-A Godot Project Template
+# pong
+
+Pong created in Godot

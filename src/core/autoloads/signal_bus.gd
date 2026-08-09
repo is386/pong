@@ -2,7 +2,7 @@ extends Node
 
 @warning_ignore_start("unused_signal")
 
-signal game_started(level_uid: String, spawn_id: StringName)
+signal game_started(level_uid: String)
 signal game_exit_to_title_requested
 signal game_exited_to_menu
 signal game_close_requested

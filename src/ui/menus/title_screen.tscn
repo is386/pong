@@ -35,7 +35,7 @@ theme_override_constants/separation = 12
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=740623256]
 layout_mode = 2
-text = "Template Project"
+text = "Pong"
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=2102033395]

@@ -11,6 +11,10 @@ texture = ExtResource("2_dwth5")
 [sub_resource type="TileSet" id="TileSet_xg6m2"]
 sources/2 = SubResource("TileSetAtlasSource_rocl4")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sn2t0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bfti1"]
+
 [node name="Arena" type="Node2D" unique_id=1412663455]
 script = ExtResource("1_bfti1")
 
@@ -24,6 +28,21 @@ tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAAAAAgAAAAAAAAAAAP//AgAAAAA
 tile_set = SubResource("TileSet_xg6m2")
 
 [node name="Entities" type="Node2D" parent="." unique_id=132771634]
+
+[node name="Ceiling" type="StaticBody2D" parent="Entities" unique_id=58646910]
+position = Vector2(0, -180)
+rotation = 3.1415927
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Ceiling" unique_id=1019559318]
+shape = SubResource("WorldBoundaryShape2D_sn2t0")
+
+[node name="Floor" type="StaticBody2D" parent="Entities" unique_id=1413472745]
+position = Vector2(0, 180)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Floor" unique_id=1333554421]
+shape = SubResource("WorldBoundaryShape2D_bfti1")
 
 [node name="Spawns" type="Node2D" parent="." unique_id=132771635]
 

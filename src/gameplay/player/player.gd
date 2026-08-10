@@ -15,7 +15,7 @@ func _ready() -> void:
 		collision_shape.one_way_collision_direction = Vector2(1, 0)
 
 	if not is_player_one and is_ai:
-		speed = 112
+		speed = 117
 		_controller = AiController.new()
 	elif is_player_one:
 		_controller = PlayerController.new("move_up_p1", "move_down_p1")

@@ -6,6 +6,8 @@ signal scored(is_player_one: bool)
 const MAX_SPEED_MULTIPLIER = 2
 
 @export var speed: float = 100
+@export var paddle_hit_sound: AudioStream
+@export var wall_hit_sound: AudioStream
 
 @onready var visible_notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
@@ -33,6 +35,10 @@ func _physics_process(delta: float) -> void:
 
 		_speed_multiplier = min(MAX_SPEED_MULTIPLIER, _speed_multiplier + 0.1)
 		velocity.x *= _speed_multiplier
+
+		AudioBus.play_sfx(paddle_hit_sound)
+	else:
+		AudioBus.play_sfx(wall_hit_sound)
 
 
 func _on_screen_exited() -> void:

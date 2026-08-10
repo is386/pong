@@ -1,6 +1,7 @@
 extends Control
 
 @onready var resume_button: Button = %ResumeButton
+@onready var restart_button: Button = %RestartButton
 @onready var settings_button: Button = %SettingsButton
 @onready var exit_to_menu_button: Button = %ExitToMenuButton
 
@@ -8,6 +9,7 @@ extends Control
 func _ready() -> void:
 	resume_button.pressed.connect(_on_resume_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
+	restart_button.pressed.connect(_on_restart_button_pressed)
 	exit_to_menu_button.pressed.connect(_on_exit_to_menu_button_pressed)
 
 	SignalBus.game_paused.connect(_on_game_paused)
@@ -36,6 +38,10 @@ func _on_game_paused() -> void:
 
 func _on_resume_button_pressed() -> void:
 	SignalBus.game_resume_requested.emit()
+
+
+func _on_restart_button_pressed() -> void:
+	SignalBus.game_restart_requested.emit()
 
 
 func _on_settings_button_pressed() -> void:

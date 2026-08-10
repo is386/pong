@@ -62,10 +62,12 @@ func _on_game_started(level_uid: String) -> void:
 
 
 func _on_game_restarted() -> void:
+	_resume_game()
 	_start_game()
 
 
 func _start_game() -> void:
+	_clear_world()
 	_hide_menus()
 	_init_players()
 	load_level()
@@ -123,6 +125,7 @@ func _init_players() -> void:
 
 	var player1 := player_scene.instantiate() as Player
 	var player2 := player_scene.instantiate() as Player
+
 	if player1 == null or player2 == null:
 		push_error("Loaded player scene does not extend player or DNE: " + PLAYER_SCENE_UID)
 		return
@@ -131,6 +134,9 @@ func _init_players() -> void:
 	players.append(player1)
 	players.append(player2)
 
+	player1.hide()
+	player2.hide()
+
 	entity_root.add_child(player1)
 	entity_root.add_child(player2)
 
@@ -138,12 +144,16 @@ func _init_players() -> void:
 func _place_players_at_level_spawn() -> void:
 	if players.is_empty():
 		return
+
 	if level_manager.current_level == null:
 		push_error("Cannot place players into level because level is null")
 		return
 
 	players[0].global_position = level_manager.current_level.get_spawn_point(&"SpawnP1")
 	players[1].global_position = level_manager.current_level.get_spawn_point(&"SpawnP2")
+
+	players[0].show()
+	players[1].show()
 
 
 func _close_game() -> void:

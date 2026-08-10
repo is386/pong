@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://ehbd0ol75ec8"]
 
 [ext_resource type="Script" uid="uid://cmwqrclygi2r5" path="res://src/ui/menus/title_screen.gd" id="1_title"]
+[ext_resource type="FontFile" uid="uid://q8bcwqcnjh0n" path="res://assets/fonts/DeadRevolverGameCompact.ttf" id="2_5naw2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_40p7j"]
+font = ExtResource("2_5naw2")
+font_size = 48
 
 [node name="TitleScreen" type="Control" unique_id=1736167833]
 layout_mode = 3
@@ -36,24 +41,29 @@ theme_override_constants/separation = 12
 [node name="TitleLabel" type="Label" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=740623256]
 layout_mode = 2
 text = "Pong"
+label_settings = SubResource("LabelSettings_40p7j")
 horizontal_alignment = 1
 
 [node name="SinglePlayerButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=530160159]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5naw2")
 text = "Singleplayer"
 
 [node name="MultiplayerButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=2102033395]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5naw2")
 text = "Multiplayer"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=422166878]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5naw2")
 text = "Settings"
 
 [node name="CloseButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=1682336999]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5naw2")
 text = "Exit"

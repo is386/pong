@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://m6j5b5mshpdr"]
 
 [ext_resource type="Script" uid="uid://dggc7x0smhjy8" path="res://src/ui/menus/settings/sound_settings.gd" id="1_quc1c"]
+[ext_resource type="FontFile" uid="uid://q8bcwqcnjh0n" path="res://assets/fonts/DeadRevolverGameCompact.ttf" id="2_qfuwd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5naw2"]
+font = ExtResource("2_qfuwd")
 
 [node name="SoundSettings" type="VBoxContainer" unique_id=2087217328]
 offset_right = 184.0
@@ -17,6 +21,7 @@ theme_override_constants/separation = 8
 custom_minimum_size = Vector2(56, 0)
 layout_mode = 2
 text = "SFX"
+label_settings = SubResource("LabelSettings_5naw2")
 
 [node name="SfxSlider" type="HSlider" parent="SfxRow" unique_id=2058115707]
 unique_name_in_owner = true

@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://xxb77sil4pnu"]
 
 [ext_resource type="Script" uid="uid://devx0wk1usbeh" path="res://src/ui/hud/score_hud.gd" id="1_eb83u"]
+[ext_resource type="FontFile" uid="uid://q8bcwqcnjh0n" path="res://assets/fonts/DeadRevolverGameCompact.ttf" id="2_l5w0a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2rdjg"]
+font = ExtResource("2_l5w0a")
 
 [node name="ScoreHUD" type="Control" unique_id=701967923]
 layout_mode = 3
@@ -22,10 +26,10 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
-horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_2rdjg")
 
 [node name="PlayerTwoScore" type="Label" parent="PanelContainer" unique_id=1054962881]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
-horizontal_alignment = 1
+label_settings = SubResource("LabelSettings_2rdjg")

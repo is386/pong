@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://30n8yprab0ke"]
 
+[ext_resource type="FontFile" uid="uid://q8bcwqcnjh0n" path="res://assets/fonts/DeadRevolverGameCompact.ttf" id="1_ikjnk"]
 [ext_resource type="Script" uid="uid://8mu725g5nk5x" path="res://src/ui/menus/pause_menu.gd" id="1_pause"]
+
+[sub_resource type="Theme" id="Theme_vxm4w"]
+default_font = ExtResource("1_ikjnk")
 
 [node name="PauseMenu" type="Control" unique_id=822988843]
 layout_mode = 3
@@ -9,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_vxm4w")
 script = ExtResource("1_pause")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=2071107792]

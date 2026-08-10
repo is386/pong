@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://cyy0mv22j3ywa"]
 
 [ext_resource type="Script" uid="uid://b4xiqxclregqq" path="res://src/ui/menus/game_over_menu.gd" id="1_dj8rh"]
+[ext_resource type="FontFile" uid="uid://q8bcwqcnjh0n" path="res://assets/fonts/DeadRevolverGameCompact.ttf" id="1_jdyyu"]
+
+[sub_resource type="Theme" id="Theme_onja0"]
+default_font = ExtResource("1_jdyyu")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mpgju"]
+font_color = Color(0, 1, 0, 1)
 
 [node name="GameOverMenu" type="Control" unique_id=822988843]
 layout_mode = 3
@@ -9,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_onja0")
 script = ExtResource("1_dj8rh")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=2071107792]
@@ -37,6 +45,7 @@ theme_override_constants/separation = 12
 unique_name_in_owner = true
 layout_mode = 2
 text = "Player 1 Wins!"
+label_settings = SubResource("LabelSettings_mpgju")
 horizontal_alignment = 1
 
 [node name="RestartButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=880600548]

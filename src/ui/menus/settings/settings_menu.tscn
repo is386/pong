@@ -2,7 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cxq2c1rwjcp4o" path="res://src/ui/menus/settings/settings_menu.gd" id="1_settings"]
 [ext_resource type="PackedScene" uid="uid://3ikmkibirtt7" path="res://src/ui/menus/settings/display_settings.tscn" id="2_isby8"]
+[ext_resource type="FontFile" uid="uid://q8bcwqcnjh0n" path="res://assets/fonts/DeadRevolverGameCompact.ttf" id="2_vxm4w"]
 [ext_resource type="PackedScene" uid="uid://m6j5b5mshpdr" path="res://src/ui/menus/settings/sound_settings.tscn" id="3_vxm4w"]
+
+[sub_resource type="Theme" id="Theme_vxm4w"]
+default_font = ExtResource("2_vxm4w")
+
+[sub_resource type="Theme" id="Theme_i4e8a"]
+default_font = ExtResource("2_vxm4w")
+
+[sub_resource type="Theme" id="Theme_pj2ax"]
+default_font = ExtResource("2_vxm4w")
 
 [node name="SettingsMenu" type="Control" unique_id=163834213]
 layout_mode = 3
@@ -11,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_vxm4w")
 script = ExtResource("1_settings")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=574453784]
@@ -37,12 +48,14 @@ theme_override_constants/separation = 12
 
 [node name="SettingsLabel" type="Label" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=1062325404]
 layout_mode = 2
+theme = SubResource("Theme_i4e8a")
 text = "Settings"
 horizontal_alignment = 1
 
 [node name="SettingsTabs" type="TabContainer" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=631539106]
 unique_name_in_owner = true
 layout_mode = 2
+theme = SubResource("Theme_pj2ax")
 current_tab = 0
 clip_tabs = false
 use_hidden_tabs_for_min_size = true
@@ -62,4 +75,5 @@ metadata/_tab_name = "Sound"
 [node name="BackButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=1403033194]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vxm4w")
 text = "Back"

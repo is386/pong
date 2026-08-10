@@ -30,7 +30,7 @@ tile_set = SubResource("TileSet_xg6m2")
 [node name="Entities" type="Node2D" parent="." unique_id=132771634]
 
 [node name="Ceiling" type="StaticBody2D" parent="Entities" unique_id=58646910]
-position = Vector2(0, -180)
+position = Vector2(0, -120)
 rotation = 3.1415927
 collision_mask = 0
 
@@ -38,7 +38,7 @@ collision_mask = 0
 shape = SubResource("WorldBoundaryShape2D_sn2t0")
 
 [node name="Floor" type="StaticBody2D" parent="Entities" unique_id=1413472745]
-position = Vector2(0, 180)
+position = Vector2(0, 120)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/Floor" unique_id=1333554421]
@@ -47,7 +47,7 @@ shape = SubResource("WorldBoundaryShape2D_bfti1")
 [node name="Spawns" type="Node2D" parent="." unique_id=132771635]
 
 [node name="SpawnP1" type="Marker2D" parent="Spawns" unique_id=674706152]
-position = Vector2(-304, 0)
+position = Vector2(-144, 0)
 
 [node name="SpawnP2" type="Marker2D" parent="Spawns" unique_id=734227772]
-position = Vector2(304, 0)
+position = Vector2(144, 0)

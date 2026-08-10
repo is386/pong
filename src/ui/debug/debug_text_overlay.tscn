@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bwmhixliuiiqq"]
 
-[ext_resource type="Script" uid="uid://drwyh7dj3lkm1" path="res://src/debug/debug_overlay.gd" id="1_jv051"]
+[ext_resource type="Script" uid="uid://drwyh7dj3lkm1" path="res://src/ui/debug/debug_overlay.gd" id="1_jv051"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3fed5"]
-font_size = 10
+font_size = 8
 font_color = Color(0, 1, 0, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
@@ -11,7 +11,7 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_6yl8a"]
 line_spacing = 1.0
 paragraph_spacing = -2.0
-font_size = 10
+font_size = 8
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 

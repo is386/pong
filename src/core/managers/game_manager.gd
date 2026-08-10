@@ -7,7 +7,7 @@ signal game_over(player_one_wins: bool)
 @export var ball_scene: PackedScene
 @export var entity_root: Node
 @export var start_delay_seconds: float = 3
-@export var max_score: int = 3
+@export var max_score: int = 7
 
 var player_one_points: int
 var player_two_points: int

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 signal scored(is_player_one: bool)
 
-const MAX_SPEED_MULTIPLIER = 3
+const MAX_SPEED_MULTIPLIER = 2
 
 @export var speed: float = 100
 

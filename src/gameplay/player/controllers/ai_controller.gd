@@ -13,9 +13,9 @@ func move(player: Player, delta: float) -> void:
 		return
 
 	var direction := 0
-	if player.global_position.y + 40 < _game_manager.ball.global_position.y + 8:
+	if player.global_position.y + 24 < _game_manager.ball.global_position.y + 8:
 		direction = 1
-	elif player.global_position.y - 40 > _game_manager.ball.global_position.y - 8:
+	elif player.global_position.y - 24 > _game_manager.ball.global_position.y - 8:
 		direction = -1
 
 	if direction:

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq5ts8nb6niey" path="res://assets/art/characters/template_player.png" id="2_64h4j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn2t0"]
-size = Vector2(16, 76)
+size = Vector2(16, 46)
 
 [node name="Player" type="CharacterBody2D" unique_id=1644524287]
 collision_layer = 4
@@ -12,14 +12,6 @@ script = ExtResource("1_k2146")
 speed = 300.0
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="." unique_id=1828022754]
-texture = ExtResource("2_64h4j")
-
-[node name="PlayerSprite2D5" type="Sprite2D" parent="." unique_id=1028337075]
-position = Vector2(0, 30)
-texture = ExtResource("2_64h4j")
-
-[node name="PlayerSprite2D2" type="Sprite2D" parent="." unique_id=1245597166]
-position = Vector2(0, -30)
 texture = ExtResource("2_64h4j")
 
 [node name="PlayerSprite2D3" type="Sprite2D" parent="." unique_id=1914009897]

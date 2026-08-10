@@ -10,6 +10,7 @@ var _controller: Controller
 
 func _ready() -> void:
 	if not is_player_one and is_ai:
+		speed = 112
 		_controller = AiController.new()
 	elif is_player_one:
 		_controller = PlayerController.new("move_up_p1", "move_down_p1")

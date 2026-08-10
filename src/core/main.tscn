@@ -15,6 +15,13 @@
 process_mode = 3
 script = ExtResource("1_avv2o")
 
+[node name="Background" type="ColorRect" parent="." unique_id=155323000]
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
 [node name="Managers" type="Node" parent="." unique_id=44772124]
 
 [node name="LevelManager" type="Node" parent="Managers" unique_id=1600000004]

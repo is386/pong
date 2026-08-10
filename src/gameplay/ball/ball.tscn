@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbju77b6xd0hh"]
 
-[ext_resource type="Texture2D" uid="uid://bq5ts8nb6niey" path="res://assets/art/characters/template_player.png" id="1_orjqg"]
+[ext_resource type="Texture2D" uid="uid://b6ny3cadmaxg2" path="res://assets/art/ball.png" id="2_32na2"]
 [ext_resource type="Script" uid="uid://c047ii6tlyljq" path="res://src/gameplay/ball/ball.gd" id="2_mpgju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjqg"]
@@ -14,7 +14,7 @@ script = ExtResource("2_mpgju")
 speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=869241384]
-texture = ExtResource("1_orjqg")
+texture = ExtResource("2_32na2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244713408]
 shape = SubResource("RectangleShape2D_orjqg")

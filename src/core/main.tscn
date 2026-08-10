@@ -26,11 +26,13 @@ color = Color(0, 0, 0, 1)
 
 [node name="LevelManager" type="Node" parent="Managers" unique_id=1600000004]
 unique_name_in_owner = true
+process_mode = 1
 script = ExtResource("4_lvlmgr")
 level_root_path = NodePath("../../World/LevelRoot")
 
 [node name="GameManager" type="Node" parent="Managers" unique_id=695760407 node_paths=PackedStringArray("entity_root") groups=["game_manager"]]
 unique_name_in_owner = true
+process_mode = 1
 script = ExtResource("3_2uitn")
 ball_scene = ExtResource("3_nxx65")
 entity_root = NodePath("../../World/EntityRoot")

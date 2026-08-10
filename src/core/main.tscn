@@ -107,20 +107,6 @@ mouse_filter = 2
 visible = false
 layout_mode = 1
 
-[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1512754606]
-process_mode = 3
-layer = 100
-
-[node name="TransitionRoot" type="Control" parent="TransitionLayer" unique_id=2007891737]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="DebugLayer" type="CanvasLayer" parent="." unique_id=1767459730]
 process_mode = 3
 layer = 200

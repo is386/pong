@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b0ow65x31ivsg"]
 
-[ext_resource type="Script" uid="uid://bj0hlgdrglmlp" path="res://src/levels/arena/arena.gd" id="1_bfti1"]
+[ext_resource type="Script" uid="uid://cl227khj50s7w" path="res://src/levels/base_level.gd" id="1_lawrr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sn2t0"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bfti1"]
 
 [node name="Arena" type="Node2D" unique_id=1412663455]
-script = ExtResource("1_bfti1")
+script = ExtResource("1_lawrr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=557284582]
 z_index = 1

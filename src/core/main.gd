@@ -16,7 +16,6 @@ var players: Array[Player] = []
 # UI Root Nodes
 @onready var hud_root: Control = %HudRoot
 @onready var menu_layer: CanvasLayer = %MenuLayer
-@onready var transition_root: Control = %TransitionRoot
 
 var _level_uid: String
 var _is_single_player: bool

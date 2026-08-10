@@ -8,6 +8,7 @@ const MAX_SPEED_MULTIPLIER = 2
 @export var speed: float = 100
 @export var paddle_hit_sound: AudioStream
 @export var wall_hit_sound: AudioStream
+@export var score_sound: AudioStream
 
 @onready var visible_notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
@@ -15,6 +16,7 @@ var _speed_multiplier: float = 1
 
 
 func _ready() -> void:
+	AudioBus.play_sfx(wall_hit_sound)
 	visible_notifier.screen_exited.connect(_on_screen_exited)
 
 
@@ -43,4 +45,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_screen_exited() -> void:
 	scored.emit(global_position.x > 0)
+	AudioBus.play_sfx(score_sound)
 	queue_free()

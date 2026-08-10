@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://pbjwi03w2e3e" path="res://assets/audio/sfx/paddle.wav" id="2_dfilj"]
 [ext_resource type="Script" uid="uid://c047ii6tlyljq" path="res://src/gameplay/ball/ball.gd" id="2_mpgju"]
 [ext_resource type="AudioStream" uid="uid://dgl1t5ubq41op" path="res://assets/audio/sfx/wall.wav" id="3_ysnmv"]
+[ext_resource type="AudioStream" uid="uid://dt8pvc0dxoica" path="res://assets/audio/sfx/score.wav" id="4_ysnmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_orjqg"]
 size = Vector2(16, 16)
@@ -17,6 +18,7 @@ script = ExtResource("2_mpgju")
 speed = 200.0
 paddle_hit_sound = ExtResource("2_dfilj")
 wall_hit_sound = ExtResource("3_ysnmv")
+score_sound = ExtResource("4_ysnmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=869241384]
 texture = ExtResource("2_32na2")

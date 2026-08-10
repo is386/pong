@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://xxb77sil4pnu" path="res://src/ui/hud/score_hud.tscn" id="5_nlf45"]
 [ext_resource type="PackedScene" uid="uid://30n8yprab0ke" path="res://src/ui/menus/pause_menu.tscn" id="5_pause"]
 [ext_resource type="PackedScene" uid="uid://da2e87er73qht" path="res://src/ui/menus/settings/settings_menu.tscn" id="6_settings"]
+[ext_resource type="PackedScene" uid="uid://cyy0mv22j3ywa" path="res://src/ui/menus/game_over_menu.tscn" id="8_2in8s"]
 
 [node name="Main" type="Node" unique_id=1077554886]
 process_mode = 3
@@ -46,6 +47,7 @@ layer = 10
 
 [node name="HudRoot" type="Control" parent="HudLayer" unique_id=833271311]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,6 +80,11 @@ level_uid = "uid://b0ow65x31ivsg"
 [node name="SettingsMenu" parent="MenuLayer/MenuRoot" unique_id=1910660451 instance=ExtResource("6_settings")]
 visible = false
 layout_mode = 1
+
+[node name="GameOverMenu" parent="MenuLayer/MenuRoot" unique_id=822988843 node_paths=PackedStringArray("game_manager") instance=ExtResource("8_2in8s")]
+visible = false
+layout_mode = 1
+game_manager = NodePath("../../../Managers/GameManager")
 
 [node name="PauseMenuRoot" type="Control" parent="MenuLayer" unique_id=931117828]
 process_mode = 2

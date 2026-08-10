@@ -18,6 +18,8 @@ var players: Array[Player] = []
 @onready var menu_layer: CanvasLayer = %MenuLayer
 @onready var transition_root: Control = %TransitionRoot
 
+var _level_uid: String
+
 
 func _ready() -> void:
 	SignalBus.game_started.connect(_on_game_started)
@@ -25,6 +27,8 @@ func _ready() -> void:
 	SignalBus.game_close_requested.connect(_close_game)
 	SignalBus.game_pause_requested.connect(_pause_game)
 	SignalBus.game_resume_requested.connect(_resume_game)
+	SignalBus.game_restart_requested.connect(_on_game_restarted)
+	game_manager.game_over.connect(_on_game_over)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -53,16 +57,28 @@ func _on_game_started(level_uid: String) -> void:
 		push_error("Cannot start the game without a level")
 		return
 
+	_level_uid = level_uid
+	_start_game()
+
+
+func _on_game_restarted() -> void:
+	_start_game()
+
+
+func _start_game() -> void:
 	_hide_menus()
 	_init_players()
-	load_level(level_uid)
-	game_manager.start_game()
+	load_level()
+	game_manager.reset()
+	game_manager.spawn_ball()
+	hud_root.show()
 
 
 func _on_game_exit_to_title_requested() -> void:
 	get_tree().paused = false
 
 	_hide_menus()
+	hud_root.hide()
 	_clear_world()
 
 	await get_tree().process_frame
@@ -85,8 +101,8 @@ func _hide_menus() -> void:
 				(menu as CanvasItem).hide()
 
 
-func load_level(level_scene: String) -> BaseLevel:
-	var level: BaseLevel = await level_manager.load_level(level_scene)
+func load_level() -> BaseLevel:
+	var level: BaseLevel = await level_manager.load_level(_level_uid)
 	if level == null:
 		return null
 
@@ -133,3 +149,7 @@ func _place_players_at_level_spawn() -> void:
 func _close_game() -> void:
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
+
+
+func _on_game_over(_player_one_wins: bool) -> void:
+	_clear_world()

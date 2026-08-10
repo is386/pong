@@ -9,14 +9,14 @@ var _controller: Controller
 
 
 func _ready() -> void:
-	if is_ai:
+	if not is_player_one and is_ai:
 		_controller = AiController.new()
 		return
 
-	if not is_player_one:
-		_controller = PlayerController.new("move_up_p2", "move_down_p2")
-	else:
+	if is_player_one:
 		_controller = PlayerController.new("move_up_p1", "move_down_p1")
+	else:
+		_controller = PlayerController.new("move_up_p2", "move_down_p2")
 
 
 func _physics_process(_delta: float) -> void:

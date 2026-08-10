@@ -19,6 +19,7 @@ var players: Array[Player] = []
 @onready var transition_root: Control = %TransitionRoot
 
 var _level_uid: String
+var _is_single_player: bool
 
 
 func _ready() -> void:
@@ -52,12 +53,13 @@ func _resume_game() -> void:
 	SignalBus.game_resumed.emit()
 
 
-func _on_game_started(level_uid: String) -> void:
+func _on_game_started(level_uid: String, is_single_player: bool) -> void:
 	if level_uid.is_empty():
 		push_error("Cannot start the game without a level")
 		return
 
 	_level_uid = level_uid
+	_is_single_player = is_single_player
 	_start_game()
 
 
@@ -130,12 +132,13 @@ func _init_players() -> void:
 		push_error("Loaded player scene does not extend player or DNE: " + PLAYER_SCENE_UID)
 		return
 
-	player2.is_player_one = false
-	players.append(player1)
-	players.append(player2)
-
 	player1.hide()
 	player2.hide()
+	player2.is_player_one = false
+	player2.is_ai = _is_single_player
+
+	players.append(player1)
+	players.append(player2)
 
 	entity_root.add_child(player1)
 	entity_root.add_child(player2)

@@ -38,10 +38,15 @@ layout_mode = 2
 text = "Pong"
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=2102033395]
+[node name="SinglePlayerButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=530160159]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Start"
+text = "Singleplayer"
+
+[node name="MultiplayerButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=2102033395]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Multiplayer"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/Panel/Content/VBoxContainer" unique_id=422166878]
 unique_name_in_owner = true

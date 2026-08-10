@@ -3,12 +3,17 @@ extends CharacterBody2D
 
 @export var speed: float = 100
 
+@onready var collision_shape: CollisionShape2D = $PlayerCollisionShape2D
+
 var is_player_one: bool = true
 var is_ai: bool = false
 var _controller: Controller
 
 
 func _ready() -> void:
+	if not is_player_one:
+		collision_shape.one_way_collision_direction = Vector2(1, 0)
+
 	if not is_player_one and is_ai:
 		speed = 112
 		_controller = AiController.new()

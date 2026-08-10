@@ -22,7 +22,7 @@ unique_name_in_owner = true
 script = ExtResource("4_lvlmgr")
 level_root_path = NodePath("../../World/LevelRoot")
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=695760407 node_paths=PackedStringArray("entity_root")]
+[node name="GameManager" type="Node" parent="Managers" unique_id=695760407 node_paths=PackedStringArray("entity_root") groups=["game_manager"]]
 unique_name_in_owner = true
 script = ExtResource("3_2uitn")
 ball_scene = ExtResource("3_nxx65")

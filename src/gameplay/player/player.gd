@@ -11,22 +11,16 @@ var _controller: Controller
 func _ready() -> void:
 	if not is_player_one and is_ai:
 		_controller = AiController.new()
-		return
-
-	if is_player_one:
+	elif is_player_one:
 		_controller = PlayerController.new("move_up_p1", "move_down_p1")
 	else:
 		_controller = PlayerController.new("move_up_p2", "move_down_p2")
 
+	add_child(_controller)
 
-func _physics_process(_delta: float) -> void:
-	var direction := _controller.get_movement_direction()
-	if direction:
-		velocity.y = direction * speed
-	else:
-		velocity.y = direction * move_toward(absf(velocity.y), 0, _delta)
 
-	move_and_slide()
+func _physics_process(delta: float) -> void:
+	_controller.move(self, delta)
 
 
 func _unhandled_input(event: InputEvent) -> void:

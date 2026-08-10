@@ -133,6 +133,7 @@ func _init_players() -> void:
 		return
 
 	player1.hide()
+
 	player2.hide()
 	player2.is_player_one = false
 	player2.is_ai = _is_single_player

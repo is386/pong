@@ -10,5 +10,11 @@ func _init(move_up: String, move_down: String) -> void:
 	_move_down = move_down
 
 
-func get_movement_direction() -> float:
-	return Input.get_axis(_move_up, _move_down)
+func move(player: Player, delta: float) -> void:
+	var direction := Input.get_axis(_move_up, _move_down)
+	if direction:
+		player.velocity.y = direction * player.speed
+	else:
+		player.velocity.y = direction * move_toward(absf(player.velocity.y), 0, delta)
+
+	player.move_and_slide()

@@ -3,4 +3,4 @@ class_name Controller
 extends Node
 
 @abstract
-func get_movement_direction() -> float
+func move(player: Player, delta: float) -> void
